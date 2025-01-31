@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* First Div */
+        .header {
+            height: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: #f0f0f0;
+        }
+
+        .header .logo-title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .header .phone {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: grey;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .header button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Second Div */
+        .grid-container {
+            display: grid;
+            grid-template-rows: 75px 450px 150px 75px;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 20px;
+            background-color: #eaeaea;
+        }
+
+        .grid-container .container1 {
+            grid-area: 1 / 1 / 2 / 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .grid-container .container1 h1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        .grid-container .container1::before,
+        .grid-container .container1::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 2px;
+            background-color: black;
+        }
+
+        .grid-container .container1::before {
+            left: 0;
+        }
+
+        .grid-container .container1::after {
+            right: 0;
+        }
+
+        .grid-container .container2 {
+            grid-area: 2 / 1 / 4 / 2;
+            margin: 5px;
+        }
+
+        .grid-container .container3 {
+            grid-area: 2 / 2 / 4 / 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-container .container3 h1 {
+            text-align: center;
+        }
+
+        .grid-container .container4 {
+            grid-area: 4 / 1 / 5 / 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-container .container4 .inner-container {
+            background-color: grey;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Third Div */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card .content {
+            padding: 15px;
+        }
+
+        .card .content h3 {
+            margin: 10px 0;
+            font-size: 1.25rem;
+        }
+
+        .card .content p {
+            margin: 0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header"  style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),url('hotel1.jpg'); background-size: cover;background-repeat: no-repeat;">
+        <div class="logo-title">
+            <div class="logo"></div>
+
+<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#5f6368"><path d="M400-80v-80h520v80H400Zm40-120q0-81 51-141.5T620-416v-25q0-17 11.5-28.5T660-481q17 0 28.5 11.5T700-441v25q77 14 128.5 74.5T880-200H440Zm105-81h228q-19-27-48.5-43.5T660-341q-36 0-66 16.5T545-281Zm114 0ZM40-440v-440h240v58l280-78 320 100v40q0 50-35 85t-85 35h-80v24q0 25-14.5 45.5T628-541L358-440H40Zm80-80h80v-280h-80v280Zm160 0h64l232-85q11-4 17.5-13.5T600-640h-71l-117 38-24-76 125-42h247q9 0 22.5-6.5T796-742l-238-74-278 76v220Z"/></svg>
+         
+  <div class="title" style="font-size:20px;color:gold;">Utalii Hotel</div>
+        </div>
+        <div class="phone">+254-768-730-914</div>
+        <h1 style="color:brown;">Welcome to Utalii  Luxury Hotel</h1>
+        <button>Click Me</button>
+    </div>
+
+    <div class="grid-container">
+        <div class="container1">
+            <h1 style="font-size:12px;">welcome</h1>
+        </div>
+        <div class="container2"  style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),url('hotel1.jpg'); background-size: cover;background-repeat: no-repeat;">
+            <p></p>
+        </div>
+        <div class="container3">
+           
+            <p style="font-size:14px;">Nestled in the heart of the city, our hotel offers a blend of comfort, luxury, and convenience. With elegantly designed rooms, world-class amenities, and exceptional service, we aim to create unforgettable experiences for every guest. Whether you're here for business or leisure, our team is dedicated to making your stay as seamless and enjoyable as possible. Discover the perfect getaway at Utalii Hotel, where hospitality meets excellence.</p>
+        </div>
+        <div class="container4">
+            <div class="inner-container">
+                <p><i>"Serving our custoners with only the Best"</i></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <img src="hotel1.jpg" alt="Placeholder Image">
+            <div class="content">
+                <h3>accomodation</h3>
+                <p style="font-size:12px;">Our hotel rooms and suites  offer amenities such as comfortable beds, modern furnishings, and facilities tailored to meet guests' needs.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="hotel2.jpg" alt="Placeholder Image">
+            <div class="content">
+                <h3>dining</h3>
+                <p style="font-size:12px;">Our upscale and elegant restaurant experience characterized by high-quality cuisine, exceptional service, and a sophisticated atmosphere. Fine dining establishments typically offer carefully curated menus, often featuring gourmet dishes prepared with premium ingredients and artistic presentation.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="hotel3.jpg" alt="Placeholder Image">
+            <div class="content">
+                <h3>swimming pools</h3>
+                <p style="font-size:12px;">Our pools are indoor or outdoor and come with additional features like loungers, a deck, or even temperature-controlled water for comfort.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="hotel4.jpg" alt="Placeholder Image">
+            <div class="content">
+                <h3>spa and sauna</h3>
+                <p style="font-size:12px;">Our spas and sauna  include amenities like hot tubs, steam rooms, and wellness programs.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
